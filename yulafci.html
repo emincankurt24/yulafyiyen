@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Yulaf Yiyen</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: #f8c8dc; /* Toz pembe */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+    }
+
+    #popup {
+      background-color: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      text-align: center;
+      position: absolute;
+      transition: top 0.3s, left 0.3s;
+    }
+
+    #popup p {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    #yes {
+      background-color: #ff69b4;
+      color: white;
+    }
+
+    #no {
+      background-color: #ccc;
+    }
+
+    #yes:hover {
+      background-color: #ff1493;
+    }
+
+    #no:hover {
+      background-color: #999;
+    }
+  </style>
+</head>
+<body>
+  <div id="popup">
+    <p>Tiktok istegimi kabul eder misin?</p>
+    <button id="yes">Evet</button>
+    <button id="no">Hayır</button>
+  </div>
+
+  <script>
+    const popup = document.getElementById('popup');
+    const noButton = document.getElementById('no');
+    const yesButton = document.getElementById('yes');
+
+    yesButton.addEventListener('click', () => {
+      window.location.href = "https://youtu.be/y035E2kzLYM?si=_iCY21dd0f1VePmu";
+    });
+
+    noButton.addEventListener('click', () => {
+      const vw = window.innerWidth - popup.offsetWidth;
+      const vh = window.innerHeight - popup.offsetHeight;
+
+      const randomX = Math.random() * vw;
+      const randomY = Math.random() * vh;
+
+      popup.style.left = `${randomX}px`;
+      popup.style.top = `${randomY}px`;
+    });
+
+    // İlk konumlandırma
+    window.onload = () => {
+      popup.style.left = '50%';
+      popup.style.top = '50%';
+      popup.style.transform = 'translate(-50%, -50%)';
+    };
+  </script>
+</body>
+</html>
